@@ -6,7 +6,7 @@ Este proyecto forma parte de mi portfolio como desarrollador web y está siendo 
 
 ---
 
-## 📖 Descripción
+##  Descripción
 
 La aplicación obtiene datos de la **PokeAPI** y genera dinámicamente tarjetas de Pokémon utilizando **JavaScript y manipulación del DOM**.
 
@@ -21,7 +21,7 @@ Este proyecto está enfocado en mejorar habilidades en:
 
 ---
 
-## 🛠 Tecnologías utilizadas
+##  Tecnologías utilizadas
 
 - **HTML5**
 - **CSS3**
@@ -32,7 +32,7 @@ Este proyecto está enfocado en mejorar habilidades en:
 
 ---
 
-## ✨ Funcionalidades
+##  Funcionalidades
 
 - Obtener datos de pokémon desde una API externa.
 - Renderizado dinámico de tarjetas de Pokémon.
@@ -44,7 +44,7 @@ Este proyecto está enfocado en mejorar habilidades en:
 
 ---
 
-## 📂 Estructura del proyecto
+##  Estructura del proyecto
 
 ```
 pokedex
@@ -64,7 +64,7 @@ pokedex
 
 ---
 
-## ⚙️ Instalación
+##  Instalación
 
 1. Clonar el repositorio
 
@@ -84,7 +84,7 @@ No requiere instalación adicional ni dependencias.
 
 ---
 
-## 📡 API utilizada
+##  API utilizada
 
 Este proyecto utiliza la API pública:
 
@@ -94,15 +94,15 @@ https://pokeapi.co/
 
 ---
 
-## 📌 Estado del proyecto
+##  Estado del proyecto
 
-🚧 Proyecto en desarrollo.
+Proyecto en desarrollo.
 
 Se están implementando mejoras progresivamente mientras desarrollo nuevas funcionalidades.
 
 ---
 
-## 🎯 Objetivos del proyecto
+##  Objetivos del proyecto
 
 - Practicar el consumo de **APIs REST**
 - Mejorar habilidades en **JavaScript**
@@ -112,7 +112,7 @@ Se están implementando mejoras progresivamente mientras desarrollo nuevas funci
 
 ---
 
-## 🔮 Mejoras futuras
+##  Mejoras futuras
 
 - Paginación
 - Sistema de equipo Pokémon mejorado
@@ -120,7 +120,7 @@ Se están implementando mejoras progresivamente mientras desarrollo nuevas funci
 
 ---
 
-## 👨‍💻 Autor
+##  Autor
 
 **Iván Cuevas**
 
