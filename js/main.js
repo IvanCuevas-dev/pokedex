@@ -191,6 +191,7 @@ function crearCardPokemon(pokemon) {
         filtroTipos.classList.remove("opacity-0", "translate-y-2");
         contenido.classList.remove("opacity-0", "translate-y-2");
         contenedorBtnEquipo.classList.remove("opacity-0", "translate-y-2");
+        pantallaEquipo.classList.remove("opacity-0", "translate-y-2");
     }, 100);
 }
 

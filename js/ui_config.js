@@ -1,6 +1,7 @@
 let contenedorPokemon = document.getElementById("contenedor_pokemon");
 let contenedorBuscador = document.getElementById("contenedor_buscador");
 let listaPokemons = [];
+let pokemonFiltrados = []
 
 let modalPokemon = document.getElementById("modalPokemon");
 let contenidoModal = document.getElementById("contenidoModal");
