@@ -18,21 +18,21 @@ nombreEquipo.textContent = `Equipo ${equipoActivo + 1}`;
 
 //Mostrar panel equipo
 function abrirPanelEquipo() {
-    panelEquipo.classList.remove("translate-x-[1000%]");
-    panelEquipo.classList.add("translate-x-[120%]");
+    panelEquipo.classList.remove("right-[-260px]");
+    panelEquipo.classList.add("right-10");
 }
 
 
 //Ocultar panel equipo
 function cerrarPanelEquipo() {
-    panelEquipo.classList.remove("translate-x-[120%]");
-    panelEquipo.classList.add("translate-x-[1000%]");
+    panelEquipo.classList.remove("right-10");
+    panelEquipo.classList.add("right-[-260px]");
 }
 
 
 //Evento boton mostrar panel equipo
 btnEquipo.addEventListener("click", () => {
-    if (panelEquipo.classList.contains("translate-x-[120%]")) {
+    if (panelEquipo.classList.contains("right-10")) {
         cerrarPanelEquipo();
     } else {
         abrirPanelEquipo();
