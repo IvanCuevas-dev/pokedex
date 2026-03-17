@@ -3,6 +3,7 @@ let panelEquipo = document.getElementById("panelEquipo");
 let btnCambiarEquipo = document.getElementById("btnCambiarEquipo");
 let slots = document.querySelectorAll(".slot");
 let nombreEquipo = document.getElementById("nombreEquipo")
+let pantallaEquipo = document.getElementById("pantallaEquipo");
 
 let equipos = [
     [null, null, null, null, null, null],
@@ -12,30 +13,31 @@ let equipos = [
 let equipoActivo = 0;
 let pokemonArrastrado = null;
 
+
 //Titulo equipo 1
 nombreEquipo.textContent = `Equipo ${equipoActivo + 1}`;
 
 
 //Mostrar panel equipo
 function abrirPanelEquipo() {
-    panelEquipo.classList.remove("right-[-260px]");
-    panelEquipo.classList.add("right-10");
+    pantallaEquipo.classList.remove("opacity-0", "translate-y-2");
 }
 
 
 //Ocultar panel equipo
 function cerrarPanelEquipo() {
-    panelEquipo.classList.remove("right-10");
-    panelEquipo.classList.add("right-[-260px]");
+    pantallaEquipo.classList.add("opacity-0", "translate-y-2");
 }
 
 
 //Evento boton mostrar panel equipo
 btnEquipo.addEventListener("click", () => {
-    if (panelEquipo.classList.contains("right-10")) {
-        cerrarPanelEquipo();
-    } else {
+    if (pantallaEquipo.classList.contains("opacity-0")) {
         abrirPanelEquipo();
+        btnEquipo.textContent = "Ocultar Equipo";
+    } else {
+        cerrarPanelEquipo();
+        btnEquipo.textContent = "Mostrar Equipo";
     }
 });
 
@@ -77,6 +79,7 @@ btnCambiarEquipo.addEventListener("click", () => {
     }
     nombreEquipo.textContent = `Equipo ${equipoActivo + 1}`;
     generarEquipo();
+    animarSlots();
 });
 
 
@@ -100,5 +103,16 @@ function generarEquipo() {
         imgPokemon.src = pokemon.sprite;
         imgPokemon.classList.remove("hidden");
         imgBase.classList.add("hidden");
+    });
+}
+
+//Animar slot
+function animarSlots() {
+    document.querySelectorAll(".slot").forEach((slot, i) => {
+        slot.classList.remove("anim-slot");
+
+        void slot.offsetWidth;
+
+        slot.classList.add("anim-slot");
     });
 }

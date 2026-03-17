@@ -8,6 +8,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="/css/scroll.css">
+    <link rel="stylesheet" href="/css/animations.css">
     <link rel="icon" href="/img/pokedex-slot.png">
 </head>
 
@@ -26,11 +27,11 @@
         <div
             class="relative border-5 md:border-6 border-[#1A1A1A] rounded-lg p-2 bg-[#1A1A1A] w-full flex flex-col flex-1 min-h-0">
 
-            <!-- Pantalla pokedex -->
+            <!-- PANTALLA POKEDEX -->
             <div id="pantallaPokedex"
                 class="no-scrollbar relative bg-[url('img/fondo.png')] bg-cover bg-fixed rounded-lg overflow-y-auto flex-1 min-h-0">
 
-                <!-- Buscador -->
+                <!-- BUSCADOR -->
                 <section class="pt-6">
 
                     <div id="contenedor_buscador"
@@ -39,32 +40,31 @@
                             class="px-2 py-2 rounded-lg text-black border-4 border-[#1A1A1A] focus:border-[#CC0000] focus:outline-none border-b border-l">
                     </div>
 
-                    <!-- Botón equipo -->
+                    <!-- BOTON EQUIPO-->
                     <div id="contenedor_btnEquipo"
                         class="hidden lg:absolute lg:top-4 lg:right-12 flex mt-4 justify-center opacity-0 translate-y-2 transition duration-500">
                         <button id="btnEquipo"
-                            class="cursor-pointer px-4 py-1 bg-gradient-to-b from-[#9be36c] to-[#4ea72e] text-white font-bold rounded-md shadow-lg hover:from-[#aaf07a] hover:to-[#57b833] transition duration-300">
-                            Equipo pokémon
+                            class="cursor-pointer px-4 py-1 bg-gradient-to-b from-gray-500 to-gray-700 text-white font-bold rounded-md shadow-lg hover:from-gray-400 hover:to-gray-600 transition duration-300">
+                            Mostrar Equipo
                         </button>
                     </div>
 
-                    <!-- Filtro tipos -->
-                    <section class="mt-4">
+                    <!-- FILTRO BOTONES -->
+                    <section class=" mt-4">
                         <div id="filtroTipos"
                             class="hidden flex flex-nowrap overflow-x-auto gap-3 px-4 py-2 border-b border-gray-300 opacity-0 translate-y-2 transition duration-500">
                         </div>
                     </section>
 
-                    <!-- Estado vacío -->
                     <div id="estadoVacio"
                         class="hidden flex flex-col justify-center items-center mx-auto opacity-0 scale-95 transition duration-500">
                         <img src="img/vacio.png" alt="Contenido vacío" class="w-50 opacity-80 mt-5">
                         <span class="text-gray-700 mt-3">Aquí no hay nada...</span>
                     </div>
 
-                    <!-- Pantalla inicio -->
-                    <section id="pantallaInicio">
-                        <div class="max-w-6xl mx-auto flex justify-center px-4 mt-20">
+                    <!-- PANTALLA INICIO -->
+                    <section id="pantallaInicio" class="absolute inset-0 flex flex-col justify-center items-center">
+                        <div class="max-w-6xl mx-auto flex justify-center px-4">
                             <button id="btnEncender"
                                 class="cursor-pointer px-6 py-3 bg-gradient-to-b from-[#9be36c] to-[#4ea72e] text-white font-bold rounded-md shadow-lg hover:from-[#aaf07a] hover:to-[#57b833] transition duration-300">
                                 Encender Pokédex
@@ -82,19 +82,19 @@
                         </div>
                     </section>
 
-                    <!-- Cards -->
+                    <!-- CARDS -->
                     <section>
                         <div id="contenedor_pokemon"
                             class="hidden max-w-6xl mx-auto p-4 md:p-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8 md:gap-x-8 md:gap-y-12">
                         </div>
                     </section>
 
-                    <!-- Modal -->
+                    <!-- MODAL -->
                     <section>
                         <div id="modalPokemon"
                             class="hidden absolute inset-0 flex items-center justify-center bg-black/60 z-50 opacity-0 translate-y-2 transition duration-500">
                             <div
-                                class="bg-[url('img/fondo.png')] rounded-xl w-[300px] md:w-[380px] lg:w-[350px] h-[430px] md:h-[500px] lg:h-[470px] relative shadow-xl">
+                                class="bg-[url('img/fondo.png')] rounded-xl w-[280px] md:w-[380px] lg:w-[310px] h-[360px] md:h-[500px] lg:h-[400px] relative shadow-xl">
 
                                 <button id="cerrarModal"
                                     class="absolute top-2 right-3 text-xl font-bold cursor-pointer z-50">
@@ -109,63 +109,83 @@
             </div>
 
             <!-- PANEL EQUIPO -->
-            <div id="panelEquipo" class="w-full mt-4">
+            <div id="panelEquipo" class="hidden lg:block w-full mt-2">
 
-                <span id="nombreEquipo" class="text-white font-bold"></span>
+                <div class=" bg-[#1A1A1A] rounded-xl px-4 pb-4 shadow-lg bg-[url('img/fondo.png')] bg-cover">
+                    <div id="pantallaEquipo" class="opacity-0 translate-y-2 transition duration-300">
 
-                <div class="flex justify-between items-center gap-4">
-                    <div class="slot flex-1 max-w-[90px] h-24 bg-[url('img/fondo.png')] bg-cover flex items-center justify-center rounded-lg shadow-md hover:scale-105 transition duration-200"
-                        data-slot="0">
-                        <img class="slot-base w-10 opacity-90" src="img/pokedex-slot.png">
-                        <img class="slot-pokemon hidden w-15">
+                        <!-- HEADER EQUIPO -->
+                        <div class="overflow-hidden whitespace-nowrap w-full relative mt-1">
+                            <span id="nombreEquipo"
+                                class="inline-block min-w-full text-sm text-gray-800 font-bold text-lg tracking-wide animacion-marquee">
+                            </span>
+                        </div>
+
+                        <!-- SLOTS EQUIPO -->
+                        <div class="grid grid-cols-6 gap-3 mt-1">
+
+                            <div class="anim-slot slot group relative h-24 bg-gradient-to-b from-[#F5F5F5] via-gray-100 to-gray-500 flex items-center justify-center rounded-lg shadow-md transition duration-300 hover:scale-105"
+                                data-slot="0">
+                                <img class="slot-base w-12 opacity-60" src="img/pokedex-slot.png">
+                                <img class="slot-pokemon hidden w-20 pointer-events-none">
+                            </div>
+
+                            <div class="slot group relative h-24 bg-gradient-to-b from-[#F5F5F5] via-gray-100 to-gray-500 flex items-center justify-center rounded-lg shadow-md transition duration-300 hover:scale-105"
+                                data-slot="1">
+                                <img class="slot-base w-12 opacity-60" src="img/pokedex-slot.png">
+                                <img class="slot-pokemon hidden w-20 pointer-events-none">
+                            </div>
+
+                            <div class="slot group relative h-24 bg-gradient-to-b from-[#F5F5F5] via-gray-100 to-gray-500 flex items-center justify-center rounded-lg shadow-md transition duration-300 hover:scale-105"
+                                data-slot="2">
+                                <img class="slot-base w-12 opacity-60" src="img/pokedex-slot.png">
+                                <img class="slot-pokemon hidden w-20 pointer-events-none">
+                            </div>
+
+                            <div class="slot group relative h-24 bg-gradient-to-b from-[#F5F5F5] via-gray-100 to-gray-500 flex items-center justify-center rounded-lg shadow-md transition duration-300 hover:scale-105"
+                                data-slot="3">
+                                <img class="slot-base w-12 opacity-60" src="img/pokedex-slot.png">
+                                <img class="slot-pokemon hidden w-20 pointer-events-none">
+                            </div>
+
+                            <div class="slot group relative h-24 bg-gradient-to-b from-[#F5F5F5] via-gray-100 to-gray-500 flex items-center justify-center rounded-lg shadow-md transition duration-300 hover:scale-105"
+                                data-slot="4">
+                                <img class="slot-base w-12 opacity-60" src="img/pokedex-slot.png">
+                                <img class="slot-pokemon hidden w-20 pointer-events-none">
+                            </div>
+
+                            <div class="slot group relative h-24 bg-gradient-to-b from-[#F5F5F5] via-gray-100 to-gray-500 flex items-center justify-center rounded-lg shadow-md transition duration-300 hover:scale-105"
+                                data-slot="5">
+                                <img class="slot-base w-12 opacity-60" src="img/pokedex-slot.png">
+                                <img class="slot-pokemon hidden w-20 pointer-events-none">
+                            </div>
+
+                        </div>
+
+                        <!-- BOTONES EQUIPO -->
+                        <div class="mt-5 flex justify-between items-center gap-4">
+                            <button id="btnCambiarEquipo"
+                                class="cursor-pointer px-4 py-1 bg-gradient-to-b from-green-500 to-green-700 text-white font-bold rounded-md shadow-lg hover:from-green-400 hover:to-green-600 transition duration-300">
+                                Cambiar
+                            </button>
+
+                            <button id="btnVerEquipo"
+                                class="cursor-pointer px-4 py-1 bg-gradient-to-b from-gray-500 to-gray-700 text-white font-bold rounded-md shadow-lg hover:from-gray-400 hover:to-gray-600 transition duration-300">
+                                Información Equipo
+                            </button>
+
+                            <button id="btnEliminarEquipo"
+                                class="cursor-pointer px-4 py-1 bg-gradient-to-b from-red-500 to-red-700 text-white font-bold rounded-md shadow-lg hover:from-red-400 hover:to-red-600 transition duration-300">
+                                Eliminar
+                            </button>
+                        </div>
                     </div>
-
-                    <div class="slot flex-1 max-w-[90px] h-24 bg-[url('img/fondo.png')] bg-cover flex items-center justify-center rounded-lg shadow-md"
-                        data-slot="1">
-                        <img class="slot-base w-10 opacity-90" src="img/pokedex-slot.png">
-                        <img class="slot-pokemon hidden w-15">
-                    </div>
-
-                    <div class="slot flex-1 max-w-[90px] h-24 bg-[url('img/fondo.png')] bg-cover flex items-center justify-center rounded-lg shadow-md"
-                        data-slot="2">
-                        <img class="slot-base w-10 opacity-90" src="img/pokedex-slot.png">
-                        <img class="slot-pokemon hidden w-15">
-                    </div>
-
-                    <div class="slot flex-1 max-w-[90px] h-24 bg-[url('img/fondo.png')] bg-cover flex items-center justify-center rounded-lg shadow-md"
-                        data-slot="3">
-                        <img class="slot-base w-10 opacity-90" src="img/pokedex-slot.png">
-                        <img class="slot-pokemon hidden w-15">
-                    </div>
-
-                    <div class="slot flex-1 max-w-[90px] h-24 bg-[url('img/fondo.png')] bg-cover flex items-center justify-center rounded-lg shadow-md"
-                        data-slot="4">
-                        <img class="slot-base w-10 opacity-90" src="img/pokedex-slot.png">
-                        <img class="slot-pokemon hidden w-15">
-                    </div>
-
-                    <div class="slot flex-1 max-w-[90px] h-24 bg-[url('img/fondo.png')] bg-cover flex items-center justify-center rounded-lg shadow-md"
-                        data-slot="5">
-                        <img class="slot-base w-10 opacity-90" src="img/pokedex-slot.png">
-                        <img class="slot-pokemon hidden w-15">
-                    </div>
-
-                </div>
-
-                <div class="mt-4 flex justify-center gap-4">
-                    <button id="btnCambiarEquipo"
-                        class="cursor-pointer px-4 py-1 bg-gradient-to-b from-[#9be36c] to-[#4ea72e] text-white font-bold rounded-md shadow-lg hover:from-[#aaf07a] hover:to-[#57b833] transition duration-300">
-                        Cambiar
-                    </button>
-                    <button id="btnEliminarEquipo"
-                        class="cursor-pointer px-4 py-1 bg-gradient-to-b from-[#ff6b6b] to-[#cc0000] text-white font-bold rounded-md shadow-lg hover:from-[#ff7f7f] hover:to-[#e60000] transition duration-300">
-                        Eliminar
-                    </button>
                 </div>
             </div>
         </div>
 
-        <!-- BOTONES -->
+
+        <!-- IMAGENES LAYOUT -->
         <div class="flex items-center gap-6 lg:gap-50 mt-4">
             <img src="img/botonRedondo.png" class="h-12 md:h-20 lg:h-20">
 
@@ -183,7 +203,7 @@
         Pokédex del entrenador pokémon Iván Cuevas
     </footer>
 
-    <!-- Scripts -->
+    <!-- SCRIPTS -->
     <script src="/js/api.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/search.js"></script>

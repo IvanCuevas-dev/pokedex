@@ -290,15 +290,15 @@ function mostrarStatsPokemon(pokemon) {
     let contenedorInfo = document.createElement("div");
     contenedorInfo.classList.add(
         "flex",
-        "justify-between",
-        "items-center",
         "text-xs",
         "text-gray-600",
-        "px-10",
-        "md:mt-10",
-        "lg:mt-5",
-        "mt-2",
-        "drop-shadow-sm"
+        "drop-shadow-sm",
+        "absolute",
+        "top-30",
+        "lg:gap-50",
+        "md:gap-66",
+        "gap-42",
+        "w-full"
     );
 
 
