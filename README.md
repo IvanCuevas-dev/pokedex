@@ -1,8 +1,16 @@
 # Pokédex Web App
 
+[Demo](https://IvanCuevas-dev.github.io/pokedex)
+
 Aplicación web interactiva que consume la [PokeAPI](https://pokeapi.co/) para mostrar información de los 151 Pokémon originales en una interfaz inspirada en la Pokédex clásica.
 
 Desarrollado como proyecto de portfolio durante mis prácticas en desarrollo web.
+
+---
+
+## Vista previa
+
+![Pokédex preview](img/preview.png)
 
 ---
 
