@@ -29,6 +29,7 @@
     animation: slotIn 1.2s ease forwards;
 }
 
+
 /* ANIMACIONES MODAL MÓVIL */
 /* abrir modal */
 @keyframes bottomSheetEntrada {

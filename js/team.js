@@ -111,7 +111,7 @@ btnEliminarEquipo.addEventListener("click", async function () {
 
 
 //Genera y muestra el equipo en cada slot
-function generarEquipo() {
+function generarEquipo(skipMovil = false) {
 
     let equipo = equipos[equipoActivo];
 
@@ -133,7 +133,7 @@ function generarEquipo() {
     });
 
     // Sincronizar panel móvil si está abierto
-    if (!modalEquipoMovil.classList.contains("hidden")) {
-        generarSlotsMovil();
+    if (!skipMovil && !modalEquipoMovil.classList.contains("hidden")) {
+        generarSlotsMovil(false);
     }
 }

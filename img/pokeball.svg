@@ -1,0 +1,54 @@
+<svg width="100%" viewBox="0 0 680 680" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="gradRojo" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FF3333"/>
+      <stop offset="50%" stop-color="#CC0000"/>
+      <stop offset="100%" stop-color="#7A0000"/>
+    </radialGradient>
+    <radialGradient id="gradBlanco" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#E8E8E8"/>
+      <stop offset="100%" stop-color="#AAAAAA"/>
+    </radialGradient>
+    <radialGradient id="gradCentro" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#888888"/>
+      <stop offset="40%" stop-color="#3A3A3A"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </radialGradient>
+    <radialGradient id="gradBrillo" cx="35%" cy="25%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F0F0F0"/>
+      <stop offset="100%" stop-color="#CCCCCC"/>
+    </radialGradient>
+    <radialGradient id="gradSombra" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <clipPath id="clipCirculo">
+      <circle cx="340" cy="340" r="280"/>
+    </clipPath>
+  </defs>
+
+  <!-- Sombra inferior -->
+  <ellipse cx="350" cy="630" rx="230" ry="28" fill="#000" opacity="0.35"/>
+
+  <path d="M 60,340 A 280,280 0 0,1 620,340 Z" fill="url(#gradRojo)" clip-path="url(#clipCirculo)"/>
+  <path d="M 60,340 A 280,280 0 0,0 620,340 Z" fill="url(#gradBlanco)" clip-path="url(#clipCirculo)"/>
+  <circle cx="340" cy="340" r="280" fill="url(#gradSombra)" opacity="0.5" clip-path="url(#clipCirculo)"/>
+  <ellipse cx="230" cy="190" rx="110" ry="65" fill="white" opacity="0.18" transform="rotate(-35 230 190)" clip-path="url(#clipCirculo)"/>
+  <ellipse cx="195" cy="165" rx="55" ry="28" fill="white" opacity="0.35" transform="rotate(-35 195 165)" clip-path="url(#clipCirculo)"/>
+  <ellipse cx="175" cy="152" rx="22" ry="12" fill="white" opacity="0.6" transform="rotate(-35 175 152)" clip-path="url(#clipCirculo)"/>
+  <ellipse cx="480" cy="510" rx="70" ry="40" fill="white" opacity="0.05" transform="rotate(-35 480 510)" clip-path="url(#clipCirculo)"/>
+  <rect x="60" y="322" width="560" height="36" fill="#111111" clip-path="url(#clipCirculo)"/>
+  <rect x="60" y="322" width="560" height="3" fill="#444" opacity="0.8" clip-path="url(#clipCirculo)"/>
+  <rect x="60" y="355" width="560" height="3" fill="#000" opacity="0.8" clip-path="url(#clipCirculo)"/>
+  <circle cx="340" cy="340" r="68" fill="url(#gradCentro)"/>
+  <circle cx="340" cy="340" r="68" fill="none" stroke="#555" stroke-width="1.5"/>
+  <circle cx="340" cy="340" r="60" fill="none" stroke="#222" stroke-width="1"/>
+  <circle cx="340" cy="340" r="42" fill="url(#gradBrillo)"/>
+  <ellipse cx="325" cy="325" rx="16" ry="10" fill="white" opacity="0.7" transform="rotate(-35 325 325)"/>
+  <ellipse cx="318" cy="319" rx="7" ry="4" fill="white" opacity="0.9" transform="rotate(-35 318 319)"/>
+  <circle cx="340" cy="340" r="280" fill="none" stroke="#000" stroke-width="12"/>
+  <circle cx="340" cy="340" r="280" fill="none" stroke="#333" stroke-width="3" opacity="0.5"/>
+  <path d="M 200,78 Q 340,58 480,78" fill="none" stroke="white" stroke-width="3" opacity="0.15" stroke-linecap="round"/>
+</svg>

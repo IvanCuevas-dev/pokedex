@@ -72,8 +72,31 @@ btnEliminarEquipoMovil.addEventListener("click", async function () {
 });
 
 
+// Actualizar un slot individual con animación
+function actualizarSlotMovil(slot, pokemon) {
+
+    slot.innerHTML = "";
+
+    let img = document.createElement("img");
+    img.src = pokemon.sprite;
+    img.classList.add("w-14", "pointer-events-none");
+    slot.appendChild(img);
+
+    slot.style.animation = "none";
+    void slot.offsetWidth; // forzar reflow para reiniciar animación
+    slot.style.animation = "slotIn 0.4s ease forwards";
+}
+
+//Botón pokedex abre equipo móvil
+let btnAbrirEquipoMovil = document.getElementById("btnAbrirEquipoMovil");
+
+btnAbrirEquipoMovil.addEventListener("click", function () {
+    pokemonArrastrado = null;
+    abrirEquipoMovil();
+});
+
 //Genera los slots en móvil
-function generarSlotsMovil() {
+function generarSlotsMovil(animar = true) {
 
     contenedorSlotsMovil.innerHTML = "";
     let equipo = equipos[equipoActivo];
@@ -96,6 +119,13 @@ function generarSlotsMovil() {
             "justify-center",
             "cursor-pointer"
         );
+
+        // Animación de entrada con delay progresivo de los slots
+        if (animar) {
+            slot.style.animation = `slotIn 0.4s ease forwards`;
+            slot.style.animationDelay = `${index * 0.08}s`;
+            slot.style.opacity = "0";
+        }
 
         if (pokemon) {
             //Imagen pokemon
@@ -124,8 +154,8 @@ function generarSlotsMovil() {
         slot.addEventListener("click", function () {
             if (!pokemonArrastrado) return;
             equipos[equipoActivo][index] = pokemonArrastrado;
-            generarEquipo();
-            generarSlotsMovil()
+            generarEquipo(true);
+            actualizarSlotMovil(slot, pokemonArrastrado);
         });
 
         contenedorSlotsMovil.appendChild(slot);
