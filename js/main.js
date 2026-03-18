@@ -72,6 +72,7 @@ function crearCardPokemon(pokemon) {
 
     //Evento Drag and Drop de cada card pokemon
     contenido.setAttribute("draggable", true);
+
     contenido.addEventListener("dragstart", (e) => {
 
         pokemonArrastrado = {
@@ -188,7 +189,11 @@ function crearCardPokemon(pokemon) {
     //Listener botones "+"
     btnAgregarEquipoMovil.addEventListener("click", function (event) {
         event.stopPropagation();
-        pokemonArrastrado = pokemon;
+        pokemonArrastrado = {
+            id: pokemon.id,
+            nombre: pokemon.name,
+            sprite: pokemon.sprites.other["official-artwork"].front_default
+        };
         abrirEquipoMovil();
     });
 

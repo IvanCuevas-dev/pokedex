@@ -2,7 +2,6 @@ let btnEquipo = document.getElementById("btnEquipo");
 let panelEquipo = document.getElementById("panelEquipo");
 let btnCambiarEquipo = document.getElementById("btnCambiarEquipo");
 let slots = document.querySelectorAll(".slot");
-let nombreEquipo = document.getElementById("nombreEquipo")
 let pantallaEquipo = document.getElementById("pantallaEquipo");
 let btnEliminarEquipo = document.getElementById("btnEliminarEquipo");
 let btnInfoEquipo = document.getElementById("btnInfoEquipo");
@@ -17,6 +16,7 @@ let pokemonArrastrado = null;
 
 
 //Titulo equipo 1
+let nombreEquipo = document.getElementById("nombreEquipo")
 nombreEquipo.textContent = `Equipo ${equipoActivo + 1}`;
 
 
@@ -85,29 +85,6 @@ btnCambiarEquipo.addEventListener("click", () => {
 });
 
 
-//Genera y muestra el equipo en cada slot
-function generarEquipo() {
-
-    let equipo = equipos[equipoActivo];
-
-    slots.forEach(function (slot, index) {
-
-        let pokemon = equipo[index];
-        let imgPokemon = slot.querySelector(".slot-pokemon");
-        let imgBase = slot.querySelector(".slot-base");
-
-        if (!pokemon) {
-            imgPokemon.classList.add("hidden");
-            imgBase.classList.remove("hidden");
-            return;
-        }
-
-        imgPokemon.src = pokemon.sprite;
-        imgPokemon.classList.remove("hidden");
-        imgBase.classList.add("hidden");
-    });
-}
-
 //Animar slot
 function animarSlots() {
     document.querySelectorAll(".slot").forEach((slot, i) => {
@@ -131,3 +108,32 @@ btnEliminarEquipo.addEventListener("click", async function () {
     animarSlots();
 
 });
+
+
+//Genera y muestra el equipo en cada slot
+function generarEquipo() {
+
+    let equipo = equipos[equipoActivo];
+
+    slots.forEach(function (slot, index) {
+
+        let pokemon = equipo[index];
+        let imgPokemon = slot.querySelector(".slot-pokemon");
+        let imgBase = slot.querySelector(".slot-base");
+
+        if (!pokemon) {
+            imgPokemon.classList.add("hidden");
+            imgBase.classList.remove("hidden");
+            return;
+        }
+
+        imgPokemon.src = pokemon.sprite;
+        imgPokemon.classList.remove("hidden");
+        imgBase.classList.add("hidden");
+    });
+
+    // Sincronizar panel móvil si está abierto
+    if (!modalEquipoMovil.classList.contains("hidden")) {
+        generarSlotsMovil();
+    }
+}

@@ -9,7 +9,7 @@
 }
 
 .animacion-marquee {
-    animation: marquee 6s linear infinite;
+    animation: marquee 8s linear infinite;
     white-space: nowrap;
 }
 
@@ -27,4 +27,44 @@
 
 .anim-slot {
     animation: slotIn 1.2s ease forwards;
+}
+
+/* ANIMACIONES MODAL MÓVIL */
+/* abrir modal */
+@keyframes bottomSheetEntrada {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+}
+
+/* cerrar modal */
+@keyframes bottomSheetSalida {
+    from { transform: translateY(0); }
+    to   { transform: translateY(100%); }
+}
+
+.anim-sheet-entrada {
+    animation: bottomSheetEntrada 0.35s ease forwards;
+}
+
+.anim-sheet-salida {
+    animation: bottomSheetSalida 0.3s ease forwards;
+}
+
+/* fondo gris modal */
+@keyframes fadeOverlayEntrada {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeOverlaySalida {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+.anim-fade-overlay {
+    animation: fadeOverlayEntrada 0.3s ease forwards;
+}
+
+.anim-fade-overlay-salida {
+    animation: fadeOverlaySalida 0.3s ease forwards;
 }

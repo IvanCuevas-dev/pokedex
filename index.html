@@ -107,7 +107,7 @@
 
             <!-- MODAL CONFIRMACIÓN -->
             <div id="modalConfirm"
-                class="hidden absolute inset-0 flex items-center justify-center bg-black/50 z-50 opacity-0 transition duration-300">
+                class="hidden absolute inset-0 flex items-center justify-center bg-black/50 z-60 opacity-0 transition duration-300">
 
                 <div class="bg-[url('img/fondo.png')] rounded-xl w-[280px] p-6 shadow-xl text-center">
 
@@ -205,43 +205,43 @@
 
             <!-- PANEL EQUIPO MÓVIL -->
             <div id="modalEquipoMovil"
-                class="lg:hidden absolute inset-0 bg-black/50 z-50 flex items-center justify-center px-4">
+                class="lg:hidden hidden absolute inset-0 bg-black/50 z-50 flex items-center justify-center">
 
                 <div id="contenidoEquipoMovil"
-                    class="w-[90%] h-[90%] bg-[url('img/fondo.png')] rounded-lg p-4 //translate-y-full transition duration-300">
+                    class="w-[85%] md:w-[400px] h-[85%] bg-[url('img/fondo.png')] rounded-lg p-4 flex flex-col">
 
-                    <!-- HEADER EQUIPO MOVIL -->
-                    <div class="flex justify-between items-center mb-2">
-                        <span id="nombreEquipoMovil" class="font-bold text-gray-800">Prueba</span>
-                        <button id="cerrarEquipoMovil" class="text-xl font-bold cursor-pointer z-50">✕</button>
+                    <!-- HEADER -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span id="nombreEquipoMovil" class="font-bold text-gray-800"></span>
+                            <button id="btnCerrarEquipoMovil" class="text-xl font-bold cursor-pointer">✕</button>
+                        </div>
+                        <div class="h-px bg-gray-300"></div>
                     </div>
 
-                    <div class="h-px bg-gray-300 mb-4"></div>
-
-                    <!-- SLOTS EQUIPO MOVIL -->
-                    <div id="slotsMovil" class="grid grid-cols-3 gap-2 mb-2">
+                    <!-- SLOTS -->
+                    <div id="slotsMovil" class="grid grid-cols-2 gap-4 flex-1 content-center py-4">
                     </div>
 
-                    <div class="h-px bg-gray-300 mb-4"></div>
+                    <!-- BOTONES -->
+                    <div>
+                        <div class="h-px bg-gray-300 mb-3"></div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button id="btnCambiarEquipoMovil"
+                                class="cursor-pointer py-1 bg-gradient-to-b from-green-500 to-green-700 text-white font-bold rounded-md shadow-lg">
+                                Cambiar
+                            </button>
+                            <button id="btnInfoEquipoMovil"
+                                class="cursor-pointer py-1 bg-gradient-to-b from-gray-500 to-gray-700 text-white font-bold rounded-md shadow-lg">
+                                Info
+                            </button>
+                            <button id="btnEliminarEquipoMovil"
+                                class="cursor-pointer py-1 bg-gradient-to-b from-red-500 to-red-700 text-white font-bold rounded-md shadow-lg">
+                                Eliminar
+                            </button>
 
-                    <!-- BOTONES EQUIPO MOVIL -->
-                    <div class="grid grid-cols-3 gap-2">
-                        <button id="btnCambiarEquipoMovil"
-                            class="cursor-pointer py-1 bg-gradient-to-b from-green-500 to-green-700 text-white font-bold rounded-md shadow-lg">
-                            Cambiar
-                        </button>
-
-                        <button id="btnInfoEquipoMovil"
-                            class="cursor-pointer py-1 bg-gradient-to-b from-gray-500 to-gray-700 text-white font-bold rounded-md shadow-lg">
-                            Info
-                        </button>
-
-                        <button id="btnEliminarEquipoMovil"
-                            class="cursor-pointer py-1 bg-gradient-to-b from-red-500 to-red-700 text-white font-bold rounded-md shadow-lg">
-                            Eliminar
-                        </button>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -271,6 +271,7 @@
     <script src="js/search.js"></script>
     <script src="js/pokemon_modal.js"></script>
     <script src="js/team.js"></script>
+    <script src="js/team_mobile.js"></script>
     <script src="js/confirm_modal.js"></script>
     <script src="js/main.js"></script>
 
