@@ -4,6 +4,8 @@ let btnCambiarEquipo = document.getElementById("btnCambiarEquipo");
 let slots = document.querySelectorAll(".slot");
 let nombreEquipo = document.getElementById("nombreEquipo")
 let pantallaEquipo = document.getElementById("pantallaEquipo");
+let btnEliminarEquipo = document.getElementById("btnEliminarEquipo");
+let btnInfoEquipo = document.getElementById("btnInfoEquipo");
 
 let equipos = [
     [null, null, null, null, null, null],
@@ -68,7 +70,7 @@ slots.forEach(slot => {
 });
 
 
-//Alternar equipo activo
+//Listener boton cambiar equipo activo
 btnCambiarEquipo.addEventListener("click", () => {
 
     equipoActivo++;
@@ -116,3 +118,16 @@ function animarSlots() {
         slot.classList.add("anim-slot");
     });
 }
+
+//Listener boton eliminar equipo
+btnEliminarEquipo.addEventListener("click", async function () {
+
+    equipos[equipoActivo] = [null, null, null, null, null, null];
+
+    let confirmado = await confirmar("¿Eliminar este equipo?");
+    if (!confirmado) return;
+
+    generarEquipo();
+    animarSlots();
+
+});

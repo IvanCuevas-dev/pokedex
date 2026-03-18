@@ -32,7 +32,6 @@ function on() {
                     contenedorPokemon.classList.remove("hidden");
                     contenedorBuscador.classList.remove("hidden");
                     filtroTipos.classList.remove("hidden");
-                    contenedorBtnEquipo.classList.remove("hidden");
                     cargarPokemons();
                     generarBtnsTipo();
                 }, 500);
@@ -161,7 +160,7 @@ function crearCardPokemon(pokemon) {
         "transition"
     );
 
-    // Listener icono favorito - Alternar favorito al hacer click en el corazon
+    //Listener icono favorito - Alternar favorito al hacer click en el corazon
     iconoFavHTML.addEventListener("click", function (event) {
         event.stopPropagation();
         toggleFavorito(pokemon.id);
@@ -171,6 +170,28 @@ function crearCardPokemon(pokemon) {
         }
     });
 
+    //Botones "+" movil
+    let btnAgregarEquipoMovil = document.createElement("button");
+    btnAgregarEquipoMovil.textContent = "+";
+    btnAgregarEquipoMovil.classList.add(
+        "absolute",
+        "lg:hidden",
+        "top-0",
+        "md:right-2",
+        "right-1",
+        "text-3xl",
+        "cursor-pointer",
+        "select-none",
+        "text-gray-600"
+    );
+
+    //Listener botones "+"
+    btnAgregarEquipoMovil.addEventListener("click", function (event) {
+        event.stopPropagation();
+        pokemonArrastrado = pokemon;
+        abrirEquipoMovil();
+    });
+
     //Añadir todo al div
     contenido.appendChild(idHTML);
     contenido.appendChild(imgHTML);
@@ -178,6 +199,7 @@ function crearCardPokemon(pokemon) {
     tipoHTML.appendChild(iconoTipo);
     contenido.appendChild(tipoHTML);
     contenido.appendChild(iconoFavHTML);
+    contenido.appendChild(btnAgregarEquipoMovil);
     contenedorPokemon.appendChild(contenido);
 
     //Abrir modal de cada card
