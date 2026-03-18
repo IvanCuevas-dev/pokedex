@@ -1,129 +1,101 @@
 # Pokédex Web App
 
-Aplicación web que consume la **PokeAPI** para mostrar información de Pokémon en una interfaz inspirada en una Pokédex.
+Aplicación web interactiva que consume la [PokeAPI](https://pokeapi.co/) para mostrar información de los 151 Pokémon originales en una interfaz inspirada en la Pokédex clásica.
 
-Este proyecto forma parte de mi portfolio como desarrollador web y está siendo desarrollado progresivamente mientras realizo mis prácticas en desarrollo web.
-
----
-
-##  Descripción
-
-La aplicación obtiene datos de la **PokeAPI** y genera dinámicamente tarjetas de Pokémon utilizando **JavaScript y manipulación del DOM**.
-
-La interfaz simula una Pokédex interactiva, incluyendo animaciones de encendido y una pantalla donde se muestran los Pokémon.
-
-Este proyecto está enfocado en mejorar habilidades en:
-
-- Consumo de APIs REST
-- Manipulación dinámica del DOM
-- Desarrollo de interfaces responsive
-- Organización de proyectos frontend
+Desarrollado como proyecto de portfolio durante mis prácticas en desarrollo web.
 
 ---
 
-##  Tecnologías utilizadas
+## Descripción
 
-- **HTML5**
-- **CSS3**
-- **TailwindCSS**
-- **JavaScript (ES6)**
-- **PokeAPI**
-- **Git & GitHub**
+La aplicación obtiene datos de la PokeAPI y genera dinámicamente tarjetas de Pokémon mediante JavaScript puro y manipulación del DOM, sin frameworks adicionales.
+
+La interfaz simula una Pokédex física con animación de encendido, pantalla principal con scroll y un panel de equipo donde el usuario puede organizar hasta 3 equipos diferentes.
 
 ---
 
-##  Funcionalidades
+## Tecnologías
 
-- Obtener datos de pokémon desde una API externa.
-- Renderizado dinámico de tarjetas de Pokémon.
-- Buscador para filtrar pokémon.
-- Botones para filtrar por tipo de pokémon.
-- Posibilidad de crear 3 equipos pokémon diferentes.
-- Interfaz responsive.
-- Simulación visual de una Pokédex.
+| Tecnología | Uso |
+|---|---|
+| HTML5 | Estructura y semántica |
+| CSS3 | Animaciones y estilos base |
+| Tailwind CSS v4 | Utilidades de diseño responsive |
+| JavaScript ES6 | Lógica, DOM y consumo de API |
+| PokeAPI | Fuente de datos |
+| Git & GitHub | Control de versiones |
 
 ---
 
-##  Estructura del proyecto
+## Funcionalidades
+
+- Carga de los 151 Pokémon originales desde la PokeAPI
+- Tarjetas generadas dinámicamente con imagen, nombre, ID y tipo
+- Buscador en tiempo real por nombre o número
+- Filtros por tipo de Pokémon con iconos
+- Sistema de favoritos persistente con `localStorage`
+- Modal de detalle con stats, peso y altura
+- Creación y gestión de 3 equipos Pokémon independientes
+- Panel de equipo con drag & drop en escritorio
+- Panel de equipo adaptado para móvil y tablet
+- Interfaz responsive con diseño diferenciado por breakpoint
+
+---
+
+## Estructura del proyecto
 
 ```
-pokedex
+pokedex/
 │
 ├── index.html
+├── README.md
+│
 ├── css/
-│   └── styles.css
+│   ├── animations.css
+│   └── scroll.css
 │
 ├── js/
-│   └── script.js
+│   ├── ui_config.js       # Referencias DOM y configuración visual
+│   ├── api.js             # Llamadas a la PokeAPI
+│   ├── main.js            # Inicialización y renderizado de cards
+│   ├── search.js          # Filtros, buscador y favoritos
+│   ├── pokemon_modal.js   # Modal de detalle del Pokémon
+│   ├── team.js            # Lógica del sistema de equipos
+│   └── confirm_modal.js   # Modal de confirmación genérico
 │
-├── img/
-│   └── icons
-│
-└── README.md
+└── img/
+    ├── types/             # Iconos de cada tipo
+    └── ...                # Imágenes globales
 ```
 
 ---
 
-##  Instalación
-
-1. Clonar el repositorio
+## Instalación
 
 ```bash
 git clone https://github.com/tu-usuario/pokedex.git
-```
-
-2. Entrar en la carpeta del proyecto
-
-```bash
 cd pokedex
 ```
 
-3. Abrir el archivo `index.html` en el navegador.
-
-No requiere instalación adicional ni dependencias.
+Abrir `index.html` directamente en el navegador. No requiere servidor ni dependencias adicionales.
 
 ---
 
-##  API utilizada
+## Estado del proyecto
 
-Este proyecto utiliza la API pública:
-
-**PokeAPI**
-
-https://pokeapi.co/
+En desarrollo activo. Las funcionalidades principales están implementadas y funcionales. Se siguen añadiendo mejoras de forma progresiva.
 
 ---
 
-##  Estado del proyecto
+## Mejoras planificadas
 
-Proyecto en desarrollo.
-
-Se están implementando mejoras progresivamente mientras desarrollo nuevas funcionalidades.
-
----
-
-##  Objetivos del proyecto
-
-- Practicar el consumo de **APIs REST**
-- Mejorar habilidades en **JavaScript**
-- Trabajar con **manipulación dinámica del DOM**
-- Construir proyectos reales para portfolio
-- Practicar control de versiones con **Git**
+- Implementar evoluciones y habilidades en el modal de detalle
+- Persistencia del equipo en `localStorage`
+- Mejora del panel de equipo en móvil/tablet
 
 ---
 
-##  Mejoras futuras
+## Autor
 
-- Paginación
-- Sistema de equipo Pokémon mejorado
-- Animaciones adicionales
-
----
-
-##  Autor
-
-**Iván Cuevas**
-
-Desarrollador Web Junior  
+**Iván Cuevas** — Desarrollador Web Junior  
 Estudiante de Desarrollo de Aplicaciones Web
-
