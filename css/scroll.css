@@ -29,3 +29,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #dc2626;
 }
+
+
+/* cursores */
+* {
+    cursor: url('/img/cursor/cursor.cur') 0 0, auto;
+}

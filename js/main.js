@@ -78,7 +78,9 @@ function crearCardPokemon(pokemon) {
         pokemonArrastrado = {
             id: pokemon.id,
             nombre: pokemon.name,
-            sprite: pokemon.sprites.other["official-artwork"].front_default
+            sprite: pokemon.sprites.other["official-artwork"].front_default,
+            tipo: pokemon.types[0].type.name,
+            hp: pokemon.stats[0].base_stat
         };
     });
 
@@ -192,7 +194,9 @@ function crearCardPokemon(pokemon) {
         pokemonArrastrado = {
             id: pokemon.id,
             nombre: pokemon.name,
-            sprite: pokemon.sprites.other["official-artwork"].front_default
+            sprite: pokemon.sprites.other["official-artwork"].front_default,
+            tipo: pokemon.types[0].type.name,
+            hp: pokemon.stats[0].base_stat
         };
         abrirEquipoMovil();
     });
@@ -222,3 +226,11 @@ function crearCardPokemon(pokemon) {
     }, 100);
 }
 
+// Cursor durante el arrastre
+document.addEventListener("dragstart", function () {
+    document.body.style.cursor = "url('/img/cursor-grab.cur') 16 16, grabbing";
+});
+
+document.addEventListener("dragend", function () {
+    document.body.style.cursor = "";
+});

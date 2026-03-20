@@ -41,7 +41,7 @@
 
                         <!-- BOTÓN POKEBALL MÓVIL -->
                         <button id="btnAbrirEquipoMovil"
-                            class="lg:hidden ml-2 cursor-pointer active:scale-95 transition duration-200">
+                            class="lg:hidden ml-8 cursor-pointer active:scale-95 transition duration-200">
                             <img src="img/pokeball.svg" class="h-10 w-10">
                         </button>
                     </div>
@@ -209,7 +209,7 @@
                 </div>
             </div>
 
-            <!-- PANEL EQUIPO MÓVIL -->
+            <!-- MODAL EQUIPO MÓVIL -->
             <div id="modalEquipoMovil"
                 class="lg:hidden hidden absolute inset-0 bg-black/50 z-50 flex items-center justify-center">
 
@@ -250,6 +250,30 @@
                     </div>
                 </div>
             </div>
+
+            <!-- MODAL INFO EQUIPO -->
+            <div id="modalInfoEquipo" class="hidden absolute inset-0 bg-black/50 z-50 flex items-center justify-center">
+
+                <div id="contenidoInfoEquipo"
+                    class="w-[85%] md:w-[400px] lg:w-[55%] h-[85%] lg:h-[80%] bg-[url('img/fondo.png')] rounded-lg p-4 flex flex-col">
+
+                    <!-- HEADER -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span id="nombreInfoEquipo" class="font-bold text-gray-800"></span>
+                            <button id="btnCerrarInfoEquipo" class="text-xl font-bold cursor-pointer">✕</button>
+                        </div>
+                        <div class="h-px bg-gray-300"></div>
+                    </div>
+
+                    <!-- CARDS EQUIPO -->
+                    <div id="cardsInfoEquipo"
+                        class="no-scrollbar grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 flex-1 content-center py-4 overflow-y-auto">
+                    </div>
+
+                </div>
+            </div>
+
         </div>
 
 
@@ -279,6 +303,7 @@
     <script src="js/team.js"></script>
     <script src="js/team_mobile.js"></script>
     <script src="js/confirm_modal.js"></script>
+    <script src="js/team_info.js"></script>
     <script src="js/main.js"></script>
 
 </body>
