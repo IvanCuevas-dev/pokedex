@@ -50,34 +50,6 @@ La interfaz simula una Pokédex física con animación de encendido, pantalla pr
 
 ---
 
-## Estructura del proyecto
-
-```
-pokedex/
-│
-├── index.html
-├── README.md
-│
-├── css/
-│   ├── animations.css
-│   └── scroll.css
-│
-├── js/
-│   ├── ui_config.js       # Referencias DOM y configuración visual
-│   ├── api.js             # Llamadas a la PokeAPI
-│   ├── main.js            # Inicialización y renderizado de cards
-│   ├── search.js          # Filtros, buscador y favoritos
-│   ├── pokemon_modal.js   # Modal de detalle del Pokémon
-│   ├── team.js            # Lógica del sistema de equipos
-│   └── confirm_modal.js   # Modal de confirmación genérico
-│
-└── img/
-    ├── types/             # Iconos de cada tipo
-    └── ...                # Imágenes globales
-```
-
----
-
 ## Instalación
 
 ```bash
@@ -98,8 +70,6 @@ En desarrollo activo. Las funcionalidades principales están implementadas y fun
 ## Mejoras planificadas
 
 - Implementar evoluciones y habilidades en el modal de detalle
-- Persistencia del equipo en `localStorage`
-- Mejora del panel de equipo en móvil/tablet
 
 ---
 
